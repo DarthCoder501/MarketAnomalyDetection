@@ -2,7 +2,11 @@ import streamlit as st
 import openai
 import pandas as pd
 
-openai.api_key = "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"
+# Load environment variables
+load_dotenv()
+
+# Retrieve the OpenAI API key securely
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Example mock data (replace with actual DataFrame)
 def load_data():
